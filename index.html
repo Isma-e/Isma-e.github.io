@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafoli - Ismael Abdel-lah Elmahi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        section {
+            margin: 40px 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .projects-container {
+                flex-direction: row;
+            }
+            .project {
+                width: 45%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ismael Abdel-lah Elmahi</h1>
+        <p>Desenvolupador d'Aplicacions Web i Multiplataforma</p>
+    </header>
+
+    <section id="about">
+        <h2>Sobre mi</h2>
+        <p>Soc un desenvolupador en formació especialitzat en aplicacions web i multiplataforma. M'apassiona la programació i sempre busco nous reptes per millorar les meves habilitats.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projectes</h2>
+        <div class="projects-container">
+            <div class="project">
+                <img src="projecte1.jpg" alt="Gestor de viatges">
+                <h3>Gestor de viatges i excursions</h3>
+                <p>Aplicació web que permet gestionar viatges, excursions i reserves de manera eficient. Inclou funcions com la gestió d'usuaris, reserves i notificacions en temps real.</p>
+            </div>
+            <div class="project">
+                <img src="fotoP2.png" alt="Gestor de restaurant">
+                <h3>Gestor de restaurant</h3>
+                <p>Una plataforma per a restaurants on es poden gestionar els plats del dia, comandas dels clients i administració de taules. Optimitzada per a una experiència fluida i eficient.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contacte</h2>
+        <p>Pots contactar-me a:</p>
+        <ul>
+            <li>Email: <a href="mailto:iabdellah86@gmail.com">iabdellah86@gmail.com</a></li>
+            <li>Telèfon: 612571311</li>
+            <li>Instagram: <a href="https://www.instagram.com/_ismaxx__" target="_blank">@_ismaxx__</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Ismael Abdel-lah Elmahi</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            
+            window.addEventListener("scroll", function () {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.75) {
+                        section.style.opacity = 1;
+                        section.style.transform = "translateY(0)";
+                    }
+                });
+            });
+
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = "translateY(20px)";
+                section.style.transition = "all 0.5s ease-out";
+            });
+        });
+    </script>
+</body>
+</html>
